@@ -42,6 +42,8 @@ export class TodoFormComponent {
       Validators.required,
       Validators.minLength(5),
     ]),
+    valueTot: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    deadline: new FormControl('', [Validators.required, Validators.minLength(5)]),
   });
 
   public handleCreateNewTodo(): void {
@@ -50,8 +52,10 @@ export class TodoFormComponent {
       const description = String(this.todosForm.controls['description'].value);
       const id = this.allTodos.length > 0 ? this.allTodos.length + 1 : 1;
       const done = false;
+      const valueTot = String(this.todosForm.controls['valueTot'].value);
+      const deadline = String(this.todosForm.controls['deadline'].value);
 
-      this.todoSignalsService.updateTodos({ id, title, description, done });
+      this.todoSignalsService.updateTodos({ id, title, description, done, valueTot, deadline });
       this.dialogRefService.close();
     }
   }

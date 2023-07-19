@@ -8,11 +8,11 @@ import { TodoKeyLocalStorage } from '../models/enum/todoKeyLocalStorage';
 export class TodoSignalsService {
   public todosState = signal<Array<Todo>>([]);
 
-  public updateTodos({ id, title, description, done }: Todo): void {
+  public updateTodos({ id, title, description, done, valueTot, deadline }: Todo): void {
     if ((title && id && description !== null) || undefined) {
       this.todosState.mutate((todos) => {
         if (todos !== null) {
-          todos.push(new Todo(id, title, description, done));
+          todos.push(new Todo(id, title, description, done, valueTot, deadline));
         }
       });
       this.saveTodosInLocalStorage();

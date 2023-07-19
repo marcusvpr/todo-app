@@ -18,6 +18,18 @@
       ></textarea>
     </mat-form-field>
 
+    <!-- VALOR TOTAL -->
+    <mat-form-field color="accent" appearance="outline" class="todo_form_input">
+      <mat-label>Valor</mat-label>
+      <input matInput formControlName="valueTot" placeholder="Valor" />
+    </mat-form-field>
+
+    <!-- DT.ENTREGA -->
+    <mat-form-field color="accent" appearance="outline" class="todo_form_input">
+      <mat-label>Data Entrega</mat-label>
+      <input matInput formControlName="deadline" placeholder="Data Entrega" />
+    </mat-form-field>
+
     <div class="todo_form_actions">
       <button mat-raised-button class="todo_form_sucess_btn" type="submit">
         Adicionar
